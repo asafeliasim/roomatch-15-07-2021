@@ -38,13 +38,13 @@ export const register = user => dispatch => {
     },2000)
 }
 
-export const addToFavorite = (user) => dispatch => {
-    console.log("add user: " + user);
+export const addToFavorite = (userId) => dispatch => {
+    console.log("add user: " + userId);
     dispatch({
         type:ADD_USER_TO_FAVORITE_REQUEST
     })
     dispatch({
         type:ADD_USER_TO_FAVORITE_SUCCESS,
-        payload:{user}
+        payload:userId
     })
 }

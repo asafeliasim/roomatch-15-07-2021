@@ -1,10 +1,12 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { useSelector ,useDispatch} from 'react-redux';
 
 import { LinkContainer } from 'react-router-bootstrap';
 import { logout } from '../redux/actions/userActions';
 export const Header = ({path}) => {
     const userLogin = useSelector(state => state.userLogin);
+    const [notifactions,setNotifactions] = useState(['1','2']);
+
     const dispatch = useDispatch();
 
     const logoutHandler = () => {
@@ -36,8 +38,12 @@ export const Header = ({path}) => {
                         </li>
                         <li>
                             <LinkContainer to="/about" className={path === '/about' ? "current text-light" : "text-light"}>
-                                <span className="main-link">
+                                <span className="main-link notifaction">
                                     <i className="fas fa-bell"></i>
+                                    {notifactions && notifactions.length > 0 && <span className="notifaction-number">
+                                            {notifactions.length}
+                                        </span>
+                                        }
                                 </span>
                             </LinkContainer>
 

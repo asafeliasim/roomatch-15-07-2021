@@ -60,11 +60,10 @@ export const userFavoriteListReducer = (state={favorites:[]},action) => {
                 loading:true
             }
         case ADD_USER_TO_FAVORITE_SUCCESS:
-            console.log("action: " + action.payload.user);
+            console.log("action: " + action.payload);
             return{
-                ...state,
                 loading:false,
-                favorites: state.favorites.push(action.payload)
+                favorites: [...state.favorites,action.payload]
             }   
         case ADD_USER_TO_FAVORITE_FAIL:
             return{

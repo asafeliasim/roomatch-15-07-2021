@@ -1,12 +1,18 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { addToFavorite } from '../redux/actions/userActions';
 
 const MatchItem = ({person}) => {
+  
     const dispatch = useDispatch();
+    const {favorites} = useSelector(state => state.userFavoriteList);
+   
+    const exists = favorites.some(p => p === person.id);
+   
+
     const favoriteHandler = () => {
-        dispatch(addToFavorite(person));
-        console.log("person: " , JSON.stringify(person))
+        dispatch(addToFavorite(person.id));
+        console.log("person: " , person)
     }
    
     return (
@@ -20,7 +26,7 @@ const MatchItem = ({person}) => {
                         <p>{person.description}</p>
                     </div>
                     <div className="match-actions">
-                        <span className="mx-2" onClick={favoriteHandler}>
+                        <span className={`${exists ? "favorite mx-2" : "mx-2"}`} onClick={favoriteHandler}>
                             <i className="fas fa-star fa-2x" ></i>
                         </span>
                         <i className="fas fa-user-minus fa-2x"></i> 
