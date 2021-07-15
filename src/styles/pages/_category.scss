@@ -1,0 +1,39 @@
+#category{
+    position: relative;
+    padding-top: 3rem;
+    background: linear-gradient(rgba(255,255,255,0.85),rgba(255,255,255,0.8)), url('../../img/linked.png') no-repeat top center/cover;
+    height: 100vh;
+ 
+}
+.category{
+    &-item{
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px dotted #777;
+        padding: 1rem 0;
+    }
+    &-answers{
+       width: 40%;
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+    &-answer{
+        margin: 0 .5rem;
+        cursor: pointer;
+        padding: 1rem .5rem;
+        border-radius: 30px;
+        p{
+            font-size: 0.8rem;
+            margin: 0 auto;
+        }
+    }
+    &-actions{
+        margin: 0 auto;
+        width: 50%;
+        position: absolute;
+        bottom: 10%;
+        right: 20%;
+        
+    }
+}

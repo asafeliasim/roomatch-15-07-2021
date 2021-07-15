@@ -1,0 +1,47 @@
+#matches{
+    background: linear-gradient(rgba(255,255,255,0.85),rgba(255,255,255,0.8)), url('../../img/linked.png') no-repeat top center/cover;
+    min-height: 100vh;
+}
+.match{
+    &-item{
+        display: grid;
+       cursor: pointer;
+        opacity: 0.9;
+        display: flex;
+       justify-content: center;
+        padding: 0.75rem 4rem;
+        background-color: rgba(255,255,255,0.2);
+        border-bottom:1px dotted #888;
+        img{
+            grid-area: image;
+            width: 120px;
+            height: 120px;
+            border:1px splid #888;
+            border-radius: 50%;
+        }
+        &:hover{
+            background: rgba($primary-color,0.4);
+        }
+    }
+    &-content{
+        grid-area: content;
+      padding-right:4rem;
+      p{
+          margin-top: .5rem;
+          font-size: 0.8rem;
+      }
+      h5{
+          margin-top: .2rem;
+      }
+
+    }
+    &-actions{
+      
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        
+    }
+   
+}

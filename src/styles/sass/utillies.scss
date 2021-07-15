@@ -1,0 +1,279 @@
+.container {
+    max-width: $website-width;
+    padding: 0 1.5rem;
+    margin: auto;
+    overflow: hidden;
+
+    @media (max-width:570px) {
+        width: 100vw !important;
+    }
+}
+.section-title{
+    margin-top: 5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    color: $dark-color;
+    font-weight: bold;
+}
+
+// Buttons
+%btn-shred {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    transition: all 0.5s;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.btn {
+    &-large{
+        width: 100%;
+    }
+    &-primary {
+        @extend %btn-shred;
+        background-color: $primary-color;
+        color: $light-color;
+
+    }
+
+    &-secondary {
+        @extend %btn-shred;
+        background-color: $secondary-color;
+        color: $light-color;
+    }
+
+    &-dark {
+        @extend %btn-shred;
+        background-color: $dark-color;
+        color: $light-color;
+    }
+
+    &-light {
+        @extend %btn-shred;
+        background-color: $light-color;
+        color: $dark-color;
+    }
+}
+.select{
+    padding: .5rem 1rem;
+    width: 100%;
+
+   
+}
+.border{
+    &-dark{
+        border: .1rem solid #999;
+    }
+}
+// Backgrounds 
+.bg {
+    &-primary {
+        background-color: $primary-color;
+        color: $dark-color;
+    }
+
+    &-secondary {
+        background-color: $secondary-color;
+        color: $dark-color;
+    }
+
+    &-dark {
+        background-color: $dark-color;
+        color: $light-color;
+    }
+
+    &-light {
+        background-color: $light-color;
+        color: $dark-color;
+    }
+}
+
+// Padding
+.py {
+    &-1 {
+        padding: 1rem 0;
+    }
+
+    &-2 {
+        padding: 2rem 0;
+    }
+
+    &-3 {
+        padding: 3rem 0;
+    }
+
+    &-4 {
+        padding: 4rem 0;
+    }
+}
+
+.my {
+    &-1 {
+        margin: 1rem 0;
+    }
+
+    &-2 {
+        margin: 2rem 0;
+    }
+
+    &-3 {
+        margin: 3rem 0;
+    }
+
+    &-4 {
+        margin: 4rem 0;
+    }
+}
+.mx {
+    &-1 {
+        margin:0  1rem ;
+    }
+
+    &-2 {
+        margin: 0 2rem ;
+    }
+
+    &-3 {
+        margin:  0 3rem;
+    }
+
+    &-4 {
+        margin:0  4rem ;
+    }
+}
+.text {
+    &-light {
+        color: $light-color;
+        text-shadow: .1rem .1rem .1rem $dark-color;
+    }
+}
+.text-center{
+    text-align: center;
+}
+.section-title {
+    
+    font-size: 2rem;
+    display: block;
+    padding-bottom: 0.5rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-family: $font-family;
+}
+
+.bottom-line {
+    height: 2px;
+    width: 3rem;
+    background: $primary-color;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $dark-color;
+}
+
+.current {
+    color: $light-color;
+}
+
+// forms
+#form-fields{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    input{
+        width: 50%;
+        padding: 0.25rem 1rem;
+        margin-top: 0.8rem;
+        &:focus{
+            
+            outline: $primary-color solid .2rem;
+            border: none;
+        }
+       
+      
+    }
+}
+.form-actions{
+    margin: 1rem auto 0 auto;
+    width: 50%;
+}
+.input-fill{
+    border: .2rem solid $secondary-color;
+}
+
+.input{
+    &-password{
+      
+        margin-left: 1rem;
+    }
+    &-confirmedPassword{
+       
+        margin-right: 1rem;
+    }
+}
+.grid-container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+%answer-shared{
+    padding: 4rem 1rem;
+    border-radius: 50%;
+    margin: 0 1rem;
+    border:.1rem solid $dark-color;
+    cursor: pointer;
+    h3{
+        font-size: 0.8rem;
+        color: $dark-color;
+    }
+    &:hover{
+        opacity: 0.8;
+        //transform: scale(1.1);
+
+    }
+}
+.answers{
+    display: flex;
+    justify-content: center;
+    &_1{
+       @extend %answer-shared;
+       border: .2rem solid crimson
+        
+    }
+    &_2{
+        @extend %answer-shared;
+        border: .2rem solid $secondary-color;
+    }
+    &_3{
+        @extend %answer-shared;
+        border: .2rem solid $primary-color;
+      
+      
+    }
+}
+.alert{
+    margin: 0 auto;
+    width: 50%;
+    padding: 3rem 2rem;
+    &-danger{
+        background: rgba(red,0.2);
+    }
+}
